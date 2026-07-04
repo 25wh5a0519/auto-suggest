@@ -1,76 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Suggest</title>
-    <link rel="stylesheet" href="auto.css">
-</head>
+h1{
+    text-align: center;
+}
 
-<body>
+.setting{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    size: 25px;
+}
+.online{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.main{
+    text-align:center;
+    margin-top: 100px;
+}
+.p1
+{
+    color:darkslategray;
+}
+.auto{
+    color: blue;
+}
+.suggest{
+    color:black;
+}
+.search{
+    padding: 10px 10px 10px 25px;
+    border-radius: 30px;
+    width: 30%;
+}
+.lens{
+    position: relative;
+left: 30px;
+}
+#suggest-box{
+   border: 1px solid black;
+    margin: 3px auto;
+    width: 32.5%;
+    position: relative;
+    left: 9px;
+    height: 330px;
+    text-align: center;
+     border-radius: 10px;
+}
+.suggest-text{
+    padding:5px;
+    border-bottom:1px solid #ddd;
+    cursor:pointer;
+    text-align:left;
+}
 
-<div id="top">
-    <span class="setting">&#9881;</span>
-    <span class="online">&#8226; ONLINE | &#x1F552; - ms</span>
-</div>
+.suggest-text:last-child{
+    border-bottom:none;
+}
 
-<div class="main">
-    <h1><span class="auto">Being</span><span class="suggest">Infinity</span></h1>
-
-    <p class="p1">
-        One million phrases. Four algorithms. Prefix Based Auto Suggest.
-    </p>
-
-    <span class="lens">&#128269;</span>
-    <span>
-        <input
-            id="search-box"
-            class="search"
-            type="text"
-            placeholder="Start typing to search phrases">
-    </span>
-</div>
-
-<div id="suggest-box">Suggestion Box</div>
-
-<script>
-    var searchBox = document.getElementById("search-box");
-    var suggestionBox = document.getElementById("suggest-box");
-
-    searchBox.addEventListener("input", function () {
-
-        var userInput = searchBox.value;
-
-        if (userInput.trim() === "") {
-            suggestionBox.innerHTML = "";
-            return;
-        }
-
-        var url = "https://autosuggest-backend.onrender.com/api/autosuggest?q="
-            + encodeURIComponent(userInput)
-            + "&algorithm=brute&limit=10&weighted=false";
-
-        fetch(url)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-
-                var resultArray = data.results;
-                var htmlResults = "";
-
-                for (var i = 0; i < resultArray.length; i++) {
-                    htmlResults += "<div>" + resultArray[i].text + "</div>";
-                }
-
-                suggestionBox.innerHTML = htmlResults;
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-
-    });
-</script>
-
-</body>
-</html>
+.suggest-text:hover{
+    background-color:#f2f2f2;
+}
