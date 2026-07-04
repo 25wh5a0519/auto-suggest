@@ -1,60 +1,62 @@
-h1 {
+h1{
     text-align: center;
 }
 
-.setting {
+.setting{
     position: fixed;
     top: 20px;
     left: 20px;
-    font-size: 25px;
+    size: 25px;
 }
-
-.online {
+.online{
     position: fixed;
     top: 20px;
     right: 20px;
 }
-
-.main {
-    text-align: center;
+.main{
+    text-align:center;
     margin-top: 100px;
 }
-
-.p1 {
-    color: darkslategray;
+.p1
+{
+    color:darkslategray;
 }
-
-.auto {
-    color: rgb(255, 0, 230);
+.auto{
+    color: blue;
 }
-
-.suggest {
-    color: black;
+.suggest{
+    color:black;
 }
-
-/* Search bar */
-.search {
-    width: 600px;          
-    padding: 10px 10px 10px 35px;
-    border: 2px solid gray;
+.search{
+    padding: 10px 10px 10px 25px;
     border-radius: 30px;
-    font-size: 18px;
+    width: 30%;
 }
-
-/* Search icon */
-.lens {
+.lens{
     position: relative;
-    left: 30px;
+left: 30px;
+}
+#suggest-box{
+   border: 1px solid black;
+    margin: 3px auto;
+    width: 32.5%;
+    position: relative;
+    left: 9px;
+    height: 330px;
+    text-align: center;
+     border-radius: 10px;
+}
+.suggest-text{
+    padding:5px;
+    border-bottom:1px solid #ddd;
+    cursor:pointer;
+    text-align:left;
 }
 
-/* Suggestion Box */
-#suggest-box {
-    width: 640px;          
-    height: 50px;
-    margin: 0 auto;        
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align: left;
-    padding: 10px;
-    box-sizing: border-box;
+.suggest-text:last-child{
+    border-bottom:none;
+}
+
+.suggest-text:hover{
+    background-color:#f2f2f2;
 }
