@@ -1,1 +1,76 @@
-This is the auto suggested page!...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Suggest</title>
+    <link rel="stylesheet" href="auto.css">
+</head>
+
+<body>
+
+<div id="top">
+    <span class="setting">&#9881;</span>
+    <span class="online">&#8226; ONLINE | &#x1F552; - ms</span>
+</div>
+
+<div class="main">
+    <h1><span class="auto">Being</span><span class="suggest">Infinity</span></h1>
+
+    <p class="p1">
+        One million phrases. Four algorithms. Prefix Based Auto Suggest.
+    </p>
+
+    <span class="lens">&#128269;</span>
+    <span>
+        <input
+            id="search-box"
+            class="search"
+            type="text"
+            placeholder="Start typing to search phrases">
+    </span>
+</div>
+
+<div id="suggest-box">Suggestion Box</div>
+
+<script>
+    var searchBox = document.getElementById("search-box");
+    var suggestionBox = document.getElementById("suggest-box");
+
+    searchBox.addEventListener("input", function () {
+
+        var userInput = searchBox.value;
+
+        if (userInput.trim() === "") {
+            suggestionBox.innerHTML = "";
+            return;
+        }
+
+        var url = "https://autosuggest-backend.onrender.com/api/autosuggest?q="
+            + encodeURIComponent(userInput)
+            + "&algorithm=brute&limit=10&weighted=false";
+
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+
+                var resultArray = data.results;
+                var htmlResults = "";
+
+                for (var i = 0; i < resultArray.length; i++) {
+                    htmlResults += "<div>" + resultArray[i].text + "</div>";
+                }
+
+                suggestionBox.innerHTML = htmlResults;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    });
+</script>
+
+</body>
+</html>
