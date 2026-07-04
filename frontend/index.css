@@ -1,76 +1,58 @@
-h1 {
-  color: red;
+h1{
+    color:black;
 }
-
-/* property : value */
-
-#home-intro {
-  text-align: center;
-  border: 3px solid blue;
+#home-intro{
+    text-align: center;
+    border: 3px;
+    border-color: black;
+    border-style:solid;
+    /*border:3px,black,solid*/
 }
-
-#home-intro:hover {
-  background-color: burlywood;
+#nav{
+    text-align: center;
+    background-color: brown;
+    height: 25px;
+    padding-top: 5px;
+    margin-bottom: 5px;
 }
-
-#p2 {
-  color: blue;
+#nav a{
+    margin: 0px 5px;
+    text-decoration: none;
+    color: aliceblue;
 }
-
-#nav {
-  text-align: center;
-  background-color: brown;
-  height: 25px;
-  padding-top: 5px;
-  margin-bottom: 5px;
+#home-intro:hover{
+background-color:grey;
 }
-
-#nav a {
-  margin: 0px 5px;
-  text-decoration: none;
-  color: white;
+#p2{
+color:blue;
 }
-
-/* Jane Doe Card */
-
-#card {
+#card{
   align-items: center;
   margin-top: 5px;
+  border: 3px solid black;
+  margin: 5px auto;
+  width: 300px;
+  height: 580px;
+  border-radius: 8px;
 }
 
-#card-img {
+#card-img{
   width: 300px;
   height: 300px;
-  margin: 0px auto;
-}
-
-#img {
-  width: 300px;
-  height: 300px;
-}
-
-#action {
-  text-align: center;
-}
-
-/* John Doe Card */
-
-#card2 {
   align-items: center;
-  margin-top: 20px;
+  margin: 0px auto; 
+  
 }
 
-#card-img2 {
+img{
   width: 300px;
   height: 300px;
-  margin: 0px auto;
+  border-radius: 8px;
 }
 
-#img2 {
-  width: 300px;
-  height: 300px;
-}
-
-#action2 {
+#action{
   text-align: center;
+}
+button{
+  width: 300px;
 }
